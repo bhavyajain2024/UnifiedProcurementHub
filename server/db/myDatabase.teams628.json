@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "6495d173b98cec979476b423"
+  },
+  "teamName628": "Canada",
+  "managerFirstName": "Ishan",
+  "managerLastName": "Mishra",
+  "playersInTeam": [],
+  "managerPhoneNo": "9023048580",
+  "score": 0
+},
+{
+  "_id": {
+    "$oid": "6495d173b98cec979476b424"
+  },
+  "teamName628": "India",
+  "managerFirstName": "Brijesh",
+  "managerLastName": "Chaddha",
+  "playersInTeam": [],
+  "managerPhoneNo": "9023076843",
+  "score": 0
+},
+{
+  "_id": {
+    "$oid": "6495d173b98cec979476b425"
+  },
+  "teamName628": "US",
+  "managerFirstName": "James",
+  "managerLastName": "Taylor",
+  "playersInTeam": [],
+  "managerPhoneNo": "9023048000",
+  "score": 0
+}]

@@ -1,0 +1,91 @@
+[{
+  "_id": {
+    "$oid": "6495ceeab98cec979476b417"
+  },
+  "firstName": "Alice",
+  "lastName628": "Johnson628",
+  "preferenceForTeams": [
+    "Canada",
+    "India",
+    "US"
+  ],
+  "phoneNo": "9022249567"
+},
+{
+  "_id": {
+    "$oid": "6495ceeab98cec979476b418"
+  },
+  "firstName": "Jane",
+  "lastName628": "Smith628",
+  "preferenceForTeams": [
+    "US",
+    "Canada",
+    "India"
+  ],
+  "phoneNo": "9022249504"
+},
+{
+  "_id": {
+    "$oid": "6495ceeab98cec979476b419"
+  },
+  "firstName": "Charchit",
+  "lastName628": "Mishra628",
+  "preferenceForTeams": [
+    "India",
+    "US",
+    "Canada"
+  ],
+  "phoneNo": "9022249007"
+},
+{
+  "_id": {
+    "$oid": "6495ceeab98cec979476b41a"
+  },
+  "firstName": "Bhavya",
+  "lastName628": "Jain628",
+  "preferenceForTeams": [
+    "India",
+    "Canada",
+    "US"
+  ],
+  "phoneNo": "9022249888"
+},
+{
+  "_id": {
+    "$oid": "6495ceeab98cec979476b41b"
+  },
+  "firstName": "Brijesh",
+  "lastName628": "Chopra628",
+  "preferenceForTeams": [
+    "US",
+    "Canada",
+    "India"
+  ],
+  "phoneNo": "9022249898"
+},
+{
+  "_id": {
+    "$oid": "6495ceeab98cec979476b41c"
+  },
+  "firstName": "Rahul",
+  "lastName628": "Sharma628",
+  "preferenceForTeams": [
+    "India",
+    "US",
+    "Canada"
+  ],
+  "phoneNo": "9022247897"
+},
+{
+  "_id": {
+    "$oid": "6495ceeab98cec979476b41d"
+  },
+  "firstName": "Sahil",
+  "lastName628": "Kumar628",
+  "preferenceForTeams": [
+    "India",
+    "Canada",
+    "US"
+  ],
+  "phoneNo": "9022249666"
+}]
