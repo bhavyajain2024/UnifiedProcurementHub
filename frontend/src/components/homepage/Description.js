@@ -18,7 +18,7 @@ function Description() {
             Welcome to the company X website! We are a company that provides tools and you can submit purchase order using the links at the top of the page.
             <br />
             <br />
-            Click links on top navigation bar to view the list of parts and to submit a purchase order.
+            Click links on top navigation bar to perform the actions.
           </Card.Text>
         </Card.Body>
       </Card>

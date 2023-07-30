@@ -12,7 +12,8 @@ const PartsList = () => {
   }, []);
 
   return (
-    <div>
+    <div className='container'>
+      <br/>
       <h2>Parts List</h2>
       <Table striped bordered hover responsive>
         <thead>

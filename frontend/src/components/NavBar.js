@@ -24,8 +24,11 @@ function NavBar({ loggedIn, isAdmin, onLogout }) {
                 <Nav.Link className="mx-3" as={Link} to="/parts">
                   List Parts
                 </Nav.Link>
-                <Nav.Link className="mx-3" as={Link} to="/ContactUs">
-                  Contact Us
+                <Nav.Link className="mx-3" as={Link} to="/purchaseOrder">
+                  List Purchase Orders
+                </Nav.Link>
+                <Nav.Link className="mx-3" as={Link} to="/findPart">
+                  Find Part
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>
