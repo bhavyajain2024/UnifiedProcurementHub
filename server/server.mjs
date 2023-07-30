@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
-import players628 from "./routes/players.mjs";
-import teams628 from "./routes/teams.mjs";
+import CompanyX from "./routes/CompanyX.mjs";
 
 const PORT = 5050;
 const app = express();
@@ -9,8 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/player", players628);
-app.use("/team", teams628);
+app.use("/CompanyX", CompanyX);
 
 // start the Express server
 app.listen(PORT, () => {

@@ -13,6 +13,6 @@ try {
   console.error(e);
 }
 
-let db = conn.db("myDatabase");
+let db = conn.db("CompanyX");
 
 export default db;
