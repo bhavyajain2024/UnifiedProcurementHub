@@ -73,15 +73,15 @@ To test the application do the following:
 
 1. For company X: Use the API link : https://companyx-d5lt.onrender.com with CompanyX attached to it, therefore the link would be https://companyx-d5lt.onrender.com/CompanyX
 
-Then you can put any of the api routs in CompanyX.mjs to test on postman
+Then you can put any of the api routes such as 'parts' in CompanyX.mjs to test on postman. One example would be to use 'parts' as https://companyx-d5lt.onrender.com/CompanyX/parts to fetch the list of parts available.
 
 2. For company Y: Use the API link : https://companyy-0fs8.onrender.com with CompanyY attached to it, therefore the link would be https://companyy-0fs8.onrender.com/CompanyY
 
-Then you can put any of the api routs in CompanyY.mjs to test on postman
+Then you can put any of the api routes such as 'parts' in CompanyY.mjs to test on postman. One example would be to use 'parts' as https://companyy-0fs8.onrender.com/CompanyY/parts to fetch the list of parts available.
 
 3. For company Z: Use the API link : https://companyz.onrender.com with CompanyZ attached to it, therefore the link would be https://companyz.onrender.com/CompanyZ
 
-Then you can put any of the api routs in CompanyZ.mjs to test on postman
+Then you can put any of the api routes such as 'parts' in CompanyZ.mjs to test on postman. One example would be to use 'parts' as https://companyz.onrender.com/CompanyZ/parts to fetch the list of parts available.
 
 # Reference:
 
