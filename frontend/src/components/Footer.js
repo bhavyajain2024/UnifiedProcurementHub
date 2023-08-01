@@ -8,7 +8,7 @@ function createFooter() {
       <Navbar bg="dark" variant="dark" className='mt-5' style={{ position: 'fixed', bottom: 0, width: '100%' }}>
         <Container>
           <Navbar.Brand>
-            &copy; Assignment 3, 4140 2023
+            &copy; Assignment 4, 4140 2023
           </Navbar.Brand>
         </Container>
       </Navbar>
