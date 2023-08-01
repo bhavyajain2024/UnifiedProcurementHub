@@ -61,26 +61,56 @@ router.get("/purchase-orders/:poNo", async (req, res) => {
 // Submit a purchase order
 router.post("/submit-purchase-order", async (req, res) => {
   try {
-    const { poNo_628, datePO_628, status_628, clients_628_clientID, purchaseOrderDetails } = req.body;
-    const newPO = {
-      poNo_628,
-      datePO_628,
-      status_628,
-      clients_628_clientID: new ObjectId(clients_628_clientID)
-    };
-    const collection = await db.collection("POsX_628");
-    const savedPO = await collection.insertOne(newPO);
+    const { poNo_628, datePO_628, clients_628_clientID, purchaseOrderDetails } = req.body;
+    const alreadyPresentPO = await db.collection("POsX_628").findOne({ poNo_628: poNo_628 });
+    if(!alreadyPresentPO){
+      const newPO = {
+        poNo_628: poNo_628,
+        datePO_628: datePO_628,
+        status_628: "active",
+        clients_628_clientID: clients_628_clientID
+      };
+      const collection = await db.collection("POsX_628");
+      const resultPO = await collection.insertOne(newPO);
 
-    const purchaseOrderDetailsWithPO = purchaseOrderDetails.map((detail) => ({
-      ...detail,
-      POs_628_poNo: savedPO.insertedId
-    }));
-    const detailsCollection = await db.collection("PurchaseOrderDetailsX_628");
-    await detailsCollection.insertMany(purchaseOrderDetailsWithPO);
-
-    res.json({ message: "Purchase order submitted successfully" }).status(201);
+      const purchaseOrderDetailsWithPO = purchaseOrderDetails.map((detail) => ({
+        ...detail,
+        POs_628_poNo: poNo_628
+      }));
+      const detailsCollection = await db.collection("PurchaseOrderDetailsX_628");
+      await detailsCollection.insertMany(purchaseOrderDetailsWithPO);
+  
+      if(detailsCollection){
+        const partsCollection = await db.collection("partsX_628");
+        for (let i = 0; i < purchaseOrderDetails.length; i++) {
+          const part = await partsCollection.findOne({ partNo_628: purchaseOrderDetails[i].parts_628_partNo });
+          if (part) {
+            const newQoH = part.QoH_628 - purchaseOrderDetails[i].qty_628;
+            await partsCollection.updateOne(
+              { partNo_628: purchaseOrderDetails[i].parts_628_partNo },
+              { $set: { QoH_628: newQoH } }
+            );
+          }
+        }
+  
+        const clientCollection = await db.collection("clientsX_628");
+        const client = await clientCollection.findOne({ clientID_628: clients_628_clientID });
+        if (client) {
+          const dollarsOnOrder = client.dollarsOnOrder_628 + purchaseOrderDetails.reduce((total, detail) => total + detail.qty_628 * detail.price_628, 0);
+          await clientCollection.updateOne(
+            { clientID_628: clients_628_clientID },
+            { $set: { dollarsOnOrder_628: dollarsOnOrder } }
+          );
+        }
+      }
+        
+        res.json({ message: "Purchase order submitted successfully" }).status(201);
+    }
+    else{
+      throw new Error("Purchase order already exists");
+    }
   } catch (error) {
-    res.status(500).json({ error: "Failed to submit purchase order" });
+    res.status(500).json({ error: "Failed to submit purchase order", message: error.message });
   }
 });
 

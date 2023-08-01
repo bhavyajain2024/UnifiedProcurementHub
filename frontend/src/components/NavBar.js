@@ -30,6 +30,12 @@ function NavBar({ loggedIn, isAdmin, onLogout }) {
                 <Nav.Link className="mx-3" as={Link} to="/findPart">
                   Find Part
                 </Nav.Link>
+                <Nav.Link className="mx-3" as={Link} to="/findPurchaseOrder">
+                  Find PO
+                </Nav.Link>
+                <Nav.Link className="mx-3" as={Link} to="/submitPO">
+                  Submit Puchase Order
+                </Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </div>

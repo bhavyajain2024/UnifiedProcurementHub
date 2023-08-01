@@ -46,4 +46,8 @@ To stop the mongo db services you can use:
 
 # Reference:
 
-1. For learning MERN stack: https://www.mongodb.com/languages/mern-stack-tutorial
+1. For learning MERN stack and how to make API's: https://www.mongodb.com/languages/mern-stack-tutorial
+2. For learning how to implement the dropdown item selection feature: https://stackoverflow.com/questions/65419603/how-to-display-multiple-selected-values-from-a-dropdown-in-react
+3. For learning how to get the current date: https://www.shecodes.io/athena/7466-how-to-get-current-date-in-react#:~:text=In%20React%2C%20you%20can%20use,can%20be%20formatted%20as%20desired.
+4. To learn more about how to fetch API: https://www.codingthesmartway.com/how-to-fetch-api-data-with-react/
+5. To learn how to use useEffect to fetch data on first mount of the component: https://dev.to/antdp425/react-fetch-data-from-api-with-useeffect-27le
