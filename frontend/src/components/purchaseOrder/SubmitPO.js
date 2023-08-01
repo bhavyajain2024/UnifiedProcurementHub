@@ -15,7 +15,7 @@ const SubmitPurchaseOrder = () => {
   const [placeholder, setPlaceholder] = useState('Select Part');
 
   useEffect(() => {
-    fetch('http://localhost:5050/CompanyZ/parts')
+    fetch('https://companyz.onrender.com/CompanyZ/parts')
       .then(response => response.json())
       .then(data => setParts(data))
       .catch(error => console.error('Error fetching parts:', error));
@@ -51,7 +51,7 @@ const SubmitPurchaseOrder = () => {
       purchaseOrderDetails
     };
 
-    fetch('http://localhost:5050/CompanyZ/submit-purchase-order', {
+    fetch('https://companyz.onrender.com/CompanyZ/submit-purchase-order', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

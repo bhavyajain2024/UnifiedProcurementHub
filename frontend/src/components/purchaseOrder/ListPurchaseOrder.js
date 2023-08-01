@@ -5,7 +5,7 @@ const PurchaseOrdersList = () => {
   const [purchaseOrders, setPurchaseOrders] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5050/CompanyZ/purchase-orders')
+    fetch('https://companyz.onrender.com/CompanyZ/purchase-orders')
       .then((response) => response.json())
       .then((data) => setPurchaseOrders(data))
       .catch((error) => console.error('Error fetching purchase orders:', error));

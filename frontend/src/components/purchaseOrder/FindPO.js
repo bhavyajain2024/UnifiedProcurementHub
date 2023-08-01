@@ -12,7 +12,7 @@ const FindPurchaseOrder = () => {
         setPurchaseOrderDetails(null);
         return;
     }
-    fetch(`http://localhost:5050/CompanyZ/purchase-orders/${poNo}`)
+    fetch(`https://companyz.onrender.com/CompanyZ/purchase-orders/${poNo}`)
       .then((response) => {
         if (!response.ok) {
           setError('Purchase Order not found');

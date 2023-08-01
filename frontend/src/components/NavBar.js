@@ -34,7 +34,7 @@ function NavBar() {
                   Find PO
                 </Nav.Link>
                 <Nav.Link className="mx-3" as={Link} to="/findPurchaseOrderCompany">
-                  Find PO for employees
+                  List PO for employees
                 </Nav.Link>
                 <Nav.Link className="mx-3" as={Link} to="/submitPO">
                   Submit Puchase Order

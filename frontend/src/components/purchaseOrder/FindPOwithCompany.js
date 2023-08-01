@@ -6,7 +6,7 @@ const FindPurchaseOrderCompany = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5050/CompanyZ/purchase-orders-company`)
+    fetch(`https://companyz.onrender.com/CompanyZ/purchase-orders-company`)
       .then((response) => {
         if (!response.ok) {
           setError('Purchase Order not found');
