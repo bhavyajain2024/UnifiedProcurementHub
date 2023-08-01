@@ -5,7 +5,7 @@ const PartsList = () => {
   const [parts, setParts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5050/CompanyX/parts')
+    fetch('https://companyx-d5lt.onrender.com/CompanyX/parts')
       .then((response) => response.json())
       .then((data) => setParts(data))
       .catch((error) => console.error('Error fetching parts:', error));
