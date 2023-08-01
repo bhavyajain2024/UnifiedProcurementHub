@@ -7,7 +7,7 @@ const FindPart = () => {
   const [error, setError] = useState(null);
 
   const handleFindPart = () => {
-    fetch(`http://localhost:5050/CompanyX/parts/${partNo}`)
+    fetch(`http://localhost:5050/CompanyZ/parts/${partNo}`)
       .then((response) => {
         if (!response.ok) {
           setError('Part not found');

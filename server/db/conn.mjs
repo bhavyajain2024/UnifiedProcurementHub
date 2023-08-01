@@ -13,6 +13,8 @@ try {
   console.error(e);
 }
 
-let db = conn.db("CompanyX");
+let db = conn.db("CompanyZ");
+let db1 = conn.db("CompanyX");
+let db2 = conn.db("CompanyY");
 
-export default db;
+export {db, db1, db2};

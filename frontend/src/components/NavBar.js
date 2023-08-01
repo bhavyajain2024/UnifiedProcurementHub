@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import React from "react";
 
-function NavBar({ loggedIn, isAdmin, onLogout }) {
+function NavBar() {
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
@@ -13,7 +13,7 @@ function NavBar({ loggedIn, isAdmin, onLogout }) {
         <div className=" container d-flex justify-content-between align-items-center">
           <div className="align-items-center">
             <Navbar.Brand as={Link} to="/" className="fw-bold ">
-              <h1 className="mt-4">CompanyX</h1>
+              <h1 className="mt-4">CompanyZ</h1>
             </Navbar.Brand>
           </div>
           <div>

@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import CompanyX from "./routes/CompanyX.mjs";
+import CompanyZ from "./routes/CompanyZ.mjs";
 
 const PORT = 5050;
 const app = express();
@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/CompanyX", CompanyX);
+app.use("/CompanyZ", CompanyZ);
 
 // start the Express server
 app.listen(PORT, () => {
