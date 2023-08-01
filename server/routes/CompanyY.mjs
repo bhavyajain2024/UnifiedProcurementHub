@@ -11,7 +11,7 @@ const router = express.Router();
 // Get a list of all parts available for purchase
 router.get("/parts", async (req, res) => {
   try {
-    const collection = await db.collection("partsX_628");
+    const collection = await db.collection("partsY_628");
     const parts = await collection.find({}, "-_id partNo_628 partDescription_628 partName_628 currentPrice_628 QoH_628").toArray();
     res.json(parts).status(200);
   } catch (error) {
@@ -22,7 +22,7 @@ router.get("/parts", async (req, res) => {
 // Get a list of all purchase orders
 router.get("/purchase-orders", async (req, res) => {
   try {
-    const collection = await db.collection("POsX_628");
+    const collection = await db.collection("POsY_628");
     const purchaseOrders = await collection.find({}, "-_id poNo_628 datePO_628 status_628").toArray();
     res.json(purchaseOrders).status(200);
   } catch (error) {
@@ -34,7 +34,7 @@ router.get("/purchase-orders", async (req, res) => {
 router.get("/parts/:partNo", async (req, res) => {
   try {
     const partNo = parseInt(req.params.partNo);
-    const collection = await db.collection("partsX_628");
+    const collection = await db.collection("partsY_628");
     const part = await collection.findOne({ partNo_628: partNo }, "-_id partNo_628 partDescription_628 partName_628 currentPrice_628 QoH_628");
     if (part) {
       res.json(part).status(200);
@@ -50,7 +50,7 @@ router.get("/parts/:partNo", async (req, res) => {
 router.get("/purchase-orders/:poNo", async (req, res) => {
   try {
     const poNo = parseInt(req.params.poNo);
-    const collection = await db.collection("POsX_628");
+    const collection = await db.collection("POsY_628");
     const purchaseOrder = await collection.findOne({ poNo_628: poNo }, "-_id poNo_628 datePO_628 status_628 clients_628_clientID");
     if (purchaseOrder) {
       res.json(purchaseOrder).status(200);
@@ -66,7 +66,7 @@ router.get("/purchase-orders/:poNo", async (req, res) => {
 router.post("/submit-purchase-order", async (req, res) => {
   try {
     const { poNo_628, datePO_628, clients_628_clientID, purchaseOrderDetails } = req.body;
-    const alreadyPresentPO = await db.collection("POsX_628").findOne({ poNo_628: poNo_628 });
+    const alreadyPresentPO = await db.collection("POsY_628").findOne({ poNo_628: poNo_628 });
     if(!alreadyPresentPO){
       const newPO = {
         poNo_628: poNo_628,
@@ -74,18 +74,18 @@ router.post("/submit-purchase-order", async (req, res) => {
         status_628: "active",
         clients_628_clientID: clients_628_clientID
       };
-      const collection = await db.collection("POsX_628");
+      const collection = await db.collection("POsY_628");
       const resultPO = await collection.insertOne(newPO);
 
       const purchaseOrderDetailsWithPO = purchaseOrderDetails.map((detail) => ({
         ...detail,
         POs_628_poNo: poNo_628
       }));
-      const detailsCollection = await db.collection("PurchaseOrderDetailsX_628");
+      const detailsCollection = await db.collection("PurchaseOrderDetailsY_628");
       await detailsCollection.insertMany(purchaseOrderDetailsWithPO);
   
       if(detailsCollection){
-        const partsCollection = await db.collection("partsX_628");
+        const partsCollection = await db.collection("partsY_628");
         for (let i = 0; i < purchaseOrderDetails.length; i++) {
           const part = await partsCollection.findOne({ partNo_628: purchaseOrderDetails[i].parts_628_partNo });
           if (part) {
@@ -97,7 +97,7 @@ router.post("/submit-purchase-order", async (req, res) => {
           }
         }
   
-        const clientCollection = await db.collection("clientsX_628");
+        const clientCollection = await db.collection("clientsY_628");
         const client = await clientCollection.findOne({ clientID_628: clients_628_clientID });
         if (client) {
           const dollarsOnOrder = client.dollarsOnOrder_628 + purchaseOrderDetails.reduce((total, detail) => total + detail.qty_628 * detail.price_628, 0);
