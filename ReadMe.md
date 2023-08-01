@@ -19,30 +19,55 @@ To stop the mongo db services you can use:
 
 ## Steps to setup mongo db localhost
 
-1. Open MongoDB Compass
-2. Go to your local server of mongo db which you started using the above brew command
-3. create a new database named : myDatabase
-4. import the collection files provided in the db folder under server folder
+For the purpose of this assignment you won't need to load the database locally since I have hosted it online.
 
 ## Steps to run the application:
 
-1. First we need to run the sever of the application which is run by node js using Express as the server framework. To do that move to server folder and use the command:
+The application is hosted at the following links:
 
-`node server.mjs`
+1. Company X : https://manage-company-x.netlify.app/
+2. Company Y : https://manage-company-y.netlify.app/
+3. Compnay Z : https://manage-company-z.netlify.app/
 
-2. Now we need to go to the frontend folder and run the applicatin using the command:
+The backend API's are hosted here:
 
-`npm start`
+1. Company X: https://companyx-d5lt.onrender.com
+2. Company Y: https://companyy-0fs8.onrender.com
+3. Company Z: https://companyz.onrender.com
 
 ## Steps to test the application
 
-1. You can click on Assignment 3 button to go to homepage at any point.
-2. You can click on Players to get the list of players
-3. You can click on Teams to get the list of teams
-4. If you click on Teams tab, you would see that no player is currently assigned and the points of each team is zero/null
-5. Click Assign Teams button to assign the teams
-6. Page would reload and display the updated teams assignment
-7. The score of the teams is also displayed
+A general note: The API's response can be slow at times, therefore try refreshing the page or just clicking on tabs multiple times, once the API loads then it is reponsive.
+
+To test the application do the following:
+
+### To test the company X, click the hosted link for company X then:
+
+1. Click List parts, this should load the current list of parts in company X
+2. Click List Purchase Orders, this should load the current list of PO's in company X
+3. Click Find Part: Then type in the part number found in step 1, press "Find Part", this should then display the details for that part
+4. Click Find PO: Then type in the PO number found in step 2, press "Find Purchase Order", this should then display the details for that PO
+5. Click Submit PO: Then type in the PO number you want to submit (remember it needs to be a new one), type in the client number from the given client numbers in the word document for company X, which are 1,2 and 3. Then Click on select part, choose the one you want to add, type in the quantity, click Add Part, then you can repeat this to add more parts to the same Purchase order, they would be added in separate lines. After this, click Submit Purchase Order.
+6. You can check the submitted PO through the website only, by going to the list PO tab.
+
+### To test the company Y, click the hosted link for company Y then:
+
+1. Click List parts, this should load the current list of parts in company Y
+2. Click List Purchase Orders, this should load the current list of PO's in company Y
+3. Click Find Part: Then type in the part number found in step 1, press "Find Part", this should then display the details for that part
+4. Click Find PO: Then type in the PO number found in step 2, press "Find Purchase Order", this should then display the details for that PO
+5. Click Submit PO: Then type in the PO number you want to submit (remember it needs to be a new one), type in the client number from the given client numbers in the word document for company Y, which are 1,2 and 3. Then Click on select part, choose the one you want to add, type in the quantity, click Add Part, then you can repeat this to add more parts to the same Purchase order, they would be added in separate lines. After this, click Submit Purchase Order.
+6. You can check the submitted PO through the website only, by going to the list PO tab.
+
+### To test the company Z, click the hosted link for company Z then:
+
+1. Click List parts, this should load the current list of parts from Company X and Company Y
+2. Click List Purchase Orders, this should load the current list of PO's in company Z
+3. Click Find Part: Then type in the part number found in step 1, press "Find Part", this should then display the details for that part from Company X and Y.
+4. Click Find PO: Then type in the PO number found in step 2, press "Find Purchase Order", this should then display the details for that PO from Company Z.
+5. Click Submit PO: Then type in the PO number you want to submit (remember it needs to be a new one), type in the client number from the given client numbers in the word document for company Y, which are 1,2 and 3. Then Click on select part, choose the one you want to add, type in the quantity, click Add Part, then you can repeat this to add more parts to the same Purchase order, they would be added in separate lines. After this, click Submit Purchase Order.
+6. You can check the submitted PO through the website only, by going to the list PO tab. You can check other companies websites as well, where it would show the submitted PO.
+7. If you go to "List PO for employees", it should display the details of submitted PO with their respective companies where the order is submitted.
 
 # Reference:
 
