@@ -55,10 +55,10 @@ router.get("/parts/:partNo", async (req, res) => {
 router.get("/purchase-orders/:poNo", async (req, res) => {
   try {
     const poNo = parseInt(req.params.poNo);
-    const collection = await db.collection("POsZ_628");
-    const purchaseOrder = await collection.findOne({ poNo_628: poNo }, "-_id poNo_628 datePO_628 status_628 clients_628_clientID");
-    if (purchaseOrder) {
-      res.json(purchaseOrder).status(200);
+    const collection = await db.collection("PurchaseOrderDetailsZ_628");
+    const purchaseOrderDetails = await collection.find({POs_628_poNo: poNo }, "-_id parts_628_partNo price_628 qty_628 status_628 lineNo_628 POs_628_poNo").toArray();
+    if (purchaseOrderDetails) {
+      res.json(purchaseOrderDetails).status(200);
     } else {
       res.status(404).json({ error: "Purchase order not found" });
     }
