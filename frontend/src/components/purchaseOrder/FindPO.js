@@ -3,26 +3,26 @@ import { Table, Form, Button, Alert } from 'react-bootstrap';
 
 const FindPurchaseOrder = () => {
   const [poNo, setPoNo] = useState('');
-  const [purchaseOrder, setPurchaseOrder] = useState(null);
+  const [purchaseOrderDetails, setPurchaseOrderDetails] = useState(null);
   const [error, setError] = useState(null);
 
   const handleFindPurchaseOrder = () => {
     if(poNo === '') {
         setError('Please enter a valid PO Number');
-        setPurchaseOrder(null);
+        setPurchaseOrderDetails(null);
         return;
     }
     fetch(`http://localhost:5050/CompanyY/purchase-orders/${poNo}`)
       .then((response) => {
         if (!response.ok) {
           setError('Purchase Order not found');
-          setPurchaseOrder(null);
+          setPurchaseOrderDetails(null);
           return null;
         }
         setError(null);
         return response.json();
       })
-      .then((data) => setPurchaseOrder(data))
+      .then((data) => setPurchaseOrderDetails(data))
       .catch((error) => console.error('Error fetching purchase order:', error));
   };
 
@@ -43,23 +43,38 @@ const FindPurchaseOrder = () => {
         </Button>
       </Form>
       {error && <Alert className='danger'>{error}</Alert>}
-      {purchaseOrder && (
-        <Table striped bordered hover responsive>
-            <tbody>
+      {purchaseOrderDetails && (
+        <>
+        {purchaseOrderDetails.map((element) => (
+           <Table striped bordered hover responsive key={element._id}>
+            <thead>
                 <tr>
-                    <td>PO Number:</td>
-                    <td>{purchaseOrder.poNo_628}</td>
+                    <th>Line Number: {element.lineNo_628}</th>
                 </tr>
-                <tr>
-                    <td>Date:</td>
-                    <td>{purchaseOrder.datePO_628}</td>
-                </tr>
-                <tr>
-                    <td>Status:</td>
-                    <td>{purchaseOrder.status_628}</td>
-                </tr>
-            </tbody>
-        </Table>)}
+            </thead>
+           <tbody>
+               <tr>
+                   <td>Part Number:</td>
+                   <td>{element.parts_628_partNo}</td>
+               </tr>
+               <tr>
+                   <td>Price:</td>
+                   <td>{element.price_628}</td>
+               </tr>
+               <tr>
+                   <td>Quanity:</td>
+                   <td>{element.qty_628}</td>
+               </tr>
+               <tr>
+                   <td>Status:</td>
+                   <td>{element.status_628}</td>
+               </tr>
+           </tbody>
+       </Table>
+        ))}
+       
+        </>
+        )}
     </div>
   );
 };
