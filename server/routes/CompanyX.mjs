@@ -1,3 +1,7 @@
+// https://www.mongodb.com/languages/mern-stack-tutorial
+// Accessed on: August 1,2023
+// learned about MERN Stack
+
 import express from "express";
 import db from "../db/conn.mjs";
 import { ObjectId } from "mongodb";
