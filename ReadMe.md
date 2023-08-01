@@ -3,7 +3,7 @@
 1. Move to frontend folder and do `npm install`
 2. Move to server folder and do `npm install`
 
-## Before running our application server we need to run the MongoDB local server which is run on Mac OS using the command:
+# Before running our application server we need to run the MongoDB local server which is run on Mac OS using the command:
 
 To install mongoDB in mac os:
 
@@ -17,11 +17,11 @@ To stop the mongo db services you can use:
 
 `brew services stop mongodb-community@6.0`
 
-## Steps to setup mongo db localhost
+# Steps to setup mongo db localhost
 
 For the purpose of this assignment you won't need to load the database locally since I have hosted it online.
 
-## Steps to run the application:
+# Steps to run the application:
 
 The application is hosted at the following links:
 
@@ -35,13 +35,13 @@ The backend API's are hosted here:
 2. Company Y: https://companyy-0fs8.onrender.com
 3. Company Z: https://companyz.onrender.com
 
-## Steps to test the application
+# Steps to test the application
 
 A general note: The API's response can be slow at times, therefore try refreshing the page or just clicking on tabs multiple times, once the API loads then it is reponsive.
 
 To test the application do the following:
 
-### To test the company X, click the hosted link for company X then:
+## To test the company X, click the hosted link for company X then:
 
 1. Click List parts, this should load the current list of parts in company X
 2. Click List Purchase Orders, this should load the current list of PO's in company X
@@ -50,7 +50,7 @@ To test the application do the following:
 5. Click Submit PO: Then type in the PO number you want to submit (remember it needs to be a new one), type in the client number from the given client numbers in the word document for company X, which are 1,2 and 3. Then Click on select part, choose the one you want to add, type in the quantity, click Add Part, then you can repeat this to add more parts to the same Purchase order, they would be added in separate lines. After this, click Submit Purchase Order.
 6. You can check the submitted PO through the website only, by going to the list PO tab.
 
-### To test the company Y, click the hosted link for company Y then:
+## To test the company Y, click the hosted link for company Y then:
 
 1. Click List parts, this should load the current list of parts in company Y
 2. Click List Purchase Orders, this should load the current list of PO's in company Y
@@ -59,7 +59,7 @@ To test the application do the following:
 5. Click Submit PO: Then type in the PO number you want to submit (remember it needs to be a new one), type in the client number from the given client numbers in the word document for company Y, which are 1,2 and 3. Then Click on select part, choose the one you want to add, type in the quantity, click Add Part, then you can repeat this to add more parts to the same Purchase order, they would be added in separate lines. After this, click Submit Purchase Order.
 6. You can check the submitted PO through the website only, by going to the list PO tab.
 
-### To test the company Z, click the hosted link for company Z then:
+## To test the company Z, click the hosted link for company Z then:
 
 1. Click List parts, this should load the current list of parts from Company X and Company Y
 2. Click List Purchase Orders, this should load the current list of PO's in company Z
@@ -68,6 +68,20 @@ To test the application do the following:
 5. Click Submit PO: Then type in the PO number you want to submit (remember it needs to be a new one), type in the client number from the given client numbers in the word document for company Y, which are 1,2 and 3. Then Click on select part, choose the one you want to add, type in the quantity, click Add Part, then you can repeat this to add more parts to the same Purchase order, they would be added in separate lines. After this, click Submit Purchase Order.
 6. You can check the submitted PO through the website only, by going to the list PO tab. You can check other companies websites as well, where it would show the submitted PO.
 7. If you go to "List PO for employees", it should display the details of submitted PO with their respective companies where the order is submitted.
+
+## To test application API's
+
+1. For company X: Use the API link : https://companyx-d5lt.onrender.com with CompanyX attached to it, therefore the link would be https://companyx-d5lt.onrender.com/CompanyX
+
+Then you can put any of the api routs in CompanyX.mjs to test on postman
+
+2. For company Y: Use the API link : https://companyy-0fs8.onrender.com with CompanyY attached to it, therefore the link would be https://companyy-0fs8.onrender.com/CompanyY
+
+Then you can put any of the api routs in CompanyY.mjs to test on postman
+
+3. For company Z: Use the API link : https://companyz.onrender.com with CompanyZ attached to it, therefore the link would be https://companyz.onrender.com/CompanyZ
+
+Then you can put any of the api routs in CompanyZ.mjs to test on postman
 
 # Reference:
 
