@@ -3,6 +3,7 @@ import HomePage from './components/HomePage';
 import PartsList from './components/parts/PartsList';
 import PurchaseOrdersList from './components/purchaseOrder/ListPurchaseOrder';
 import FindPurchaseOrder from './components/purchaseOrder/FindPO';
+import FindPurchaseOrderCompany from './components/purchaseOrder/FindPOwithCompany';
 import FindPart from './components/parts/FindPart';
 import SubmitPurchaseOrder from './components/purchaseOrder/SubmitPO';
 import createFooter from './components/Footer';
@@ -20,6 +21,7 @@ function App() {
           <Route path='/findPart' Component={FindPart}/>
           <Route path='/findPurchaseOrder' Component={FindPurchaseOrder}/>
           <Route path='/submitPO' Component={SubmitPurchaseOrder}/>
+          <Route path='/findPurchaseOrderCompany' Component={FindPurchaseOrderCompany}/>
         </Routes>
         {createFooter()}
       </div>
