@@ -37,7 +37,7 @@ The backend API's are hosted here:
 
 # Steps to test the application
 
-A general note: The API's response can be slow at times, therefore try refreshing the page or just clicking on tabs multiple times, once the API loads then it is reponsive.
+A general note: The API's response can be slow at times, therefore just wait for few minutes on the page, once the API loads then it is reponsive.
 
 To test the application do the following:
 
